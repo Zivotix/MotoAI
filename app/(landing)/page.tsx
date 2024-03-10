@@ -1,25 +1,27 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
+import {Card} from "@/components/ui/card"
 
 const LandingPage = () => {
   return (
-  <div>
+  <div className="w-1/2 y-1/2 p-4 mx-auto text-center border">
     landing page (unprotected)
+    <Card className="w-1/2 y-1/2 p-4 mx-auto text-center border">
+
     <div>
       <Link href = "/sign-in">
-    <Button>
+    <Button className="flex pr-5">
       Login
     </Button>
       </Link> 
-  </div>
-  <br></br>
-  <div>
+      <br></br>
       <Link href = "/sign-up">
-    <Button>
+    <Button className="flex pl-5">
       register
     </Button>
       </Link> 
   </div>
+    </Card>
   </div>
 );
 }
