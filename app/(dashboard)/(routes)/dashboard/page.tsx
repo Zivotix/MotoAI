@@ -1,8 +1,11 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {UserButton} from "@clerk/nextjs"
 import { ArrowRight, CodeSquare, ImagesIcon, MessageCircle, MessageCircleCodeIcon, MessagesSquareIcon, Music, VideoIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const tools = [
   {
@@ -18,7 +21,7 @@ const tools = [
     icon: ImagesIcon,
     color:"text-yellow-500",
     bgcolor: "bg-yellow-500/10",
-    href:"/chat"
+    href:"/image"
 
   },
   {
@@ -26,7 +29,7 @@ const tools = [
     icon: VideoIcon,
     color:"text-emerald-500",
     bgcolor: "bg-emerald-500/10",
-    href:"/chat"
+    href:"/video"
 
   },
 
@@ -35,7 +38,7 @@ const tools = [
     icon: Music,
     color:"text-red-500",
     bgcolor: "bg-red-500/10",
-    href:"/chat"
+    href:"/music"
 
   },
   {
@@ -43,16 +46,14 @@ const tools = [
     icon: CodeSquare,
     color:"text-pink-500",
     bgcolor: "bg-pink-500/10",
-    href:"/chat"
+    href:"/code"
 
-  },
-  
-
-
+  }
 ]
 
 
 const DashboardPage = () => {
+  const router =  useRouter();
   return (
     <div>
       <div className = "mb-8 space-y-4">
@@ -66,7 +67,8 @@ const DashboardPage = () => {
       </div>
       <div className="px-4 md:px-20 lg:px-32 space-y-4">
         {tools.map((tool) => (
-          <Card 
+          <Card
+          onClick={() => router.push(tool.href)} 
           key={tool.href}
           className = "p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
           >
@@ -82,7 +84,7 @@ const DashboardPage = () => {
           </Card>
         ))}
       </div>
-          
+      
     </div>
    
   );

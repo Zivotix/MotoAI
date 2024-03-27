@@ -4,7 +4,7 @@ import {Card} from "@/components/ui/card"
 
 const LandingPage = () => {
   return (
-  <div className="w-1/2 y-1/2 p-4 mx-auto text-center border">
+  <div className="w-1/2 y-1/2 p-4 mx-auto text-center item-center justify-center border">
     landing page (unprotected)
     <Card className="w-1/2 y-1/2 p-4 mx-auto text-center border">
 
@@ -15,6 +15,7 @@ const LandingPage = () => {
     </Button>
       </Link> 
       <br></br>
+
       <Link href = "/sign-up">
     <Button className="flex pl-5">
       register
