@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {UserButton} from "@clerk/nextjs"
-import { ArrowRight, CodeSquare, ImagesIcon, MessageCircle, MessageCircleCodeIcon, MessagesSquareIcon, Music, VideoIcon } from "lucide-react";
+import { ArrowRight, CodeSquare, EditIcon, FlashlightIcon, GemIcon, GrabIcon, ImagesIcon, MessageCircle, MessageCircleCodeIcon, MessagesSquareIcon, Music, VideoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const tools = [
@@ -16,6 +16,15 @@ const tools = [
     href:"/chat"
 
   },
+  {
+    label: "TryOn",
+    icon: GrabIcon,
+    color: "text-red-800",
+    bgcolor: "bg-red-800/10",
+    href: "/TryOn"
+
+  },
+ 
   {
     label: "Image Generation",
     icon: ImagesIcon,
@@ -49,6 +58,7 @@ const tools = [
     href:"/code"
 
   }
+
 ]
 
 
@@ -58,7 +68,7 @@ const DashboardPage = () => {
     <div>
       <div className = "mb-8 space-y-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center">
-          Explore the monbius
+          Explore the Mobius-AI.
         </h2>
         <p className="text-muted-foreground font-light textsm md:text-lg text-center">
           Engage with the most Inteligent AI in the world.
